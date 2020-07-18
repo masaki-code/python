@@ -37,6 +37,9 @@ class MyImageFile:
         x /= 255
         return x
 
+    def show(self):
+        self.im.show()
+
 class MyNumbers:
     """my class"""
 

@@ -22,6 +22,9 @@ def load_file_predict(file = 'image_none.jpeg'):
     print('-----------')
     print()
 
+    image.show()
+
+
 def main_load_file(file = 'image_none.jpeg'):
     print()
     print(":: --- image ---")
@@ -66,3 +69,5 @@ def main_load_file(file = 'image_none.jpeg'):
     # print('予測データ', predict_y.value())
     print('予測データ', predict_y.trimValue())
     print('予測ラベル', predict_y.resultNumber())
+
+    image.show()
