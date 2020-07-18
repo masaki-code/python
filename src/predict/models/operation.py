@@ -6,47 +6,50 @@ import keras
 import numpy as np
 from PIL import Image
 
-def load_file_predict():
-    print()
-    print(":: --- image ---")
-    print()
+def load_file_predict(file = 'image_none.jpeg'):
+    # print()
+    # print(":: --- image ---")
+    # print()
 
-    image = my_image()
-    image.viewInfo()
-    image.viewExtrema()
-    image.viewPixel()
+    image = my_image(file)
+    # image.viewInfo()
+    # image.viewExtrema()
+    # image.viewPixel()
 
-    print()
-    print(":: --- grayscale ---")
-    print()
+    # print()
+    # print(":: --- grayscale ---")
+    # print()
 
     image.grayscale()
-    image.viewInfo()
-    image.viewExtrema()
-    image.viewPixel()
+    # image.viewInfo()
+    # image.viewExtrema()
+    # image.viewPixel()
 
-    print()
-    print(":: --- reshape ---")
-    print()
+    # print()
+    # print(":: --- reshape ---")
+    # print()
 
     x = image.toTestX()
-    print(x)
+    # print(x)
 
-    print()
-    print(":: --- model ---")
-    print()
+    # print()
+    # print(":: --- model ---")
+    # print()
     model = my_model()
 
-    print()
-    print(":: --- predict ---")
-    print()
+    # print()
+    # print(":: --- predict ---")
+    # print()
     predict_y = model.predict(x)
 
-    print()
-    print(":: --- y ---")
-    print()
+    # print()
+    # print(":: --- y ---")
+    # print()
     predict_y = numbers(predict_y)
 
-    # print('予測データ', predict_y.value())
+    print('-----------')
+    print('対象データ', file)
     print('予測データ', predict_y.trimValue())
     print('予測ラベル', predict_y.resultNumber())
+    print('-----------')
+    print()
