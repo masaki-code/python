@@ -7,7 +7,7 @@ import numpy as np
 from PIL import Image
 
 def load_file_predict(file = 'image_none.jpeg'):
-    image = my_image(file)
+    image = my_image('images/' + file)
     image.grayscale()
     x = image.toTestX()
 
