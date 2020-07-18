@@ -27,7 +27,7 @@ def main_load_file():
     print(":: --- image ---")
     print()
 
-    image = my_image()
+    image = my_image('images/image_none.jpeg')
     image.viewInfo()
     image.viewExtrema()
     image.viewPixel()

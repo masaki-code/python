@@ -6,7 +6,7 @@ from PIL import Image
 class MyImageFile:
     """my class"""
 
-    def __init__(self, file = 'image_2.jpeg'):
+    def __init__(self, file):
         from PIL import Image
         self.file = file
         self.im = Image.open(file)
