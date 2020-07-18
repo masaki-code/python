@@ -53,3 +53,48 @@ def load_file_predict(file = 'image_none.jpeg'):
     print('予測ラベル', predict_y.resultNumber())
     print('-----------')
     print()
+
+def main_load_file():
+    print()
+    print(":: --- image ---")
+    print()
+
+    image = my_image()
+    image.viewInfo()
+    image.viewExtrema()
+    image.viewPixel()
+
+    print()
+    print(":: --- grayscale ---")
+    print()
+
+    image.grayscale()
+    image.viewInfo()
+    image.viewExtrema()
+    image.viewPixel()
+
+    print()
+    print(":: --- reshape ---")
+    print()
+
+    x = image.toTestX()
+    print(x)
+
+    print()
+    print(":: --- model ---")
+    print()
+    model = my_model()
+
+    print()
+    print(":: --- predict ---")
+    print()
+    predict_y = model.predict(x)
+
+    print()
+    print(":: --- y ---")
+    print()
+    predict_y = numbers(predict_y)
+
+    # print('予測データ', predict_y.value())
+    print('予測データ', predict_y.trimValue())
+    print('予測ラベル', predict_y.resultNumber())
