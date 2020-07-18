@@ -4,13 +4,13 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 from models import operation
 
-operation.load_file_predict('image_0.jpeg')
-operation.load_file_predict('image_1.jpeg')
-operation.load_file_predict('image_2.jpeg')
-operation.load_file_predict('image_3.jpeg')
-operation.load_file_predict('image_4.jpeg')
-operation.load_file_predict('image_5.jpeg')
-operation.load_file_predict('image_6.jpeg')
-operation.load_file_predict('image_7.jpeg')
-operation.load_file_predict('image_8.jpeg')
-operation.load_file_predict('image_9.jpeg')
+operation.load_file_predict('image_0.jpg')
+operation.load_file_predict('image_1.jpg')
+operation.load_file_predict('image_2.jpg')
+operation.load_file_predict('image_3.jpg')
+operation.load_file_predict('image_4.jpg')
+operation.load_file_predict('image_5.jpg')
+operation.load_file_predict('image_6.jpg')
+operation.load_file_predict('image_7.jpg')
+operation.load_file_predict('image_8.jpg')
+operation.load_file_predict('image_9.jpg')
