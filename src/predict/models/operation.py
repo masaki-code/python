@@ -22,12 +22,12 @@ def load_file_predict(file = 'image_none.jpeg'):
     print('-----------')
     print()
 
-def main_load_file():
+def main_load_file(file = 'image_none.jpeg'):
     print()
     print(":: --- image ---")
     print()
 
-    image = my_image('images/image_none.jpeg')
+    image = my_image('images/' + file)
     image.viewInfo()
     image.viewExtrema()
     image.viewPixel()
