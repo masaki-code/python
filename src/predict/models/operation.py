@@ -7,44 +7,12 @@ import numpy as np
 from PIL import Image
 
 def load_file_predict(file = 'image_none.jpeg'):
-    # print()
-    # print(":: --- image ---")
-    # print()
-
     image = my_image(file)
-    # image.viewInfo()
-    # image.viewExtrema()
-    # image.viewPixel()
-
-    # print()
-    # print(":: --- grayscale ---")
-    # print()
-
     image.grayscale()
-    # image.viewInfo()
-    # image.viewExtrema()
-    # image.viewPixel()
-
-    # print()
-    # print(":: --- reshape ---")
-    # print()
-
     x = image.toTestX()
-    # print(x)
 
-    # print()
-    # print(":: --- model ---")
-    # print()
     model = my_model()
-
-    # print()
-    # print(":: --- predict ---")
-    # print()
     predict_y = model.predict(x)
-
-    # print()
-    # print(":: --- y ---")
-    # print()
     predict_y = numbers(predict_y)
 
     print('-----------')
