@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM php:7.2.26
 
 RUN apt-get update && apt-get -y install vim less
 RUN apt-get update && apt-get -y install python3-dev python3-pip
