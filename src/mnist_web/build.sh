@@ -1,7 +1,7 @@
 #!/bin/bash
 
-IMAGE=my-keras-mnist_web_tmp3
-CONTAINER=my-keras-mnist_web-app_tmp3
+IMAGE=my-keras-mnist_web_tmp5
+CONTAINER=my-keras-mnist_web-app_tmp5
 HOST_DIR=$PWD/files
 GEST_DIR=/home/keras
 
