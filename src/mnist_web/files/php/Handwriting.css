@@ -1,0 +1,8 @@
+canvas#can {
+	-ms-touch-action: none touch-action:none
+}
+
+body {
+	-ms-touch-action: none;
+	touch-action: none;
+}
