@@ -18,5 +18,5 @@ RUN mkdir -p /home/keras/lib && \
    chmod 757 /home/keras/images
 
 # COPY ./src/python /home/keras/lib
-# COPY ./src/images /home/keras/images
+COPY ./src/images /home/keras/images
 # COPY ./src/php    /var/www/html/

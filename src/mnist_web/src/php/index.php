@@ -1,50 +1,9 @@
 <?php
-require_once 'Consts.php';
-
-function imgBase64()
-{
-    if (isset($_POST['imgBase64'])) {
-        return $_POST['imgBase64'];
-    }
-    return '';
-}
-
-function save($imgBase64)
-{
-    if ($imgBase64 == '') {
-        return null;
-    }
-
-    if ($imgBase64 == Consts::$EMPTY_BASE64) {
-        return null;
-    }
-
-    $time = time();
-    $date = date("Ymd", $time);
-    $file_name = '/home/keras/images/' . $date . '_' . $time . '.png';
-    $decode = base64_decode($imgBase64);
-    file_put_contents($file_name, $decode);
-    return $file_name;
-}
-
-function predict($file_name){
-  if($file_name == null){
-    return null;
-
-  }
-    $command="/home/keras/venv/bin/python main.py ";
-    exec($command,$output);
-    var_dump($output);
-    // exit();
-    return $output;
-}
+require_once 'functions.php';
 
 $imgBase64 = imgBase64();
 $file_name = save($imgBase64);
-
 $output = predict($file_name);
-
-
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -71,7 +30,12 @@ $output = predict($file_name);
     if ($imgBase64 != '') {
         echo ('<img src="data:image/png;base64,' . $imgBase64 . '" />');
     }
-
+    ?>
+    <br>
+    <?php
+    if ($output != '') {
+        output_predict($output);
+    }
     ?>
 </body>
 </html>
