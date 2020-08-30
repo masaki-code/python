@@ -16,7 +16,9 @@ docker image ls $IMAGE
 echo ======================
 echo run
 echo ======================
-docker run -dit --name $CONTAINER -p 80:80 $IMAGE:$TAG
+
+# docker run -dit --name $CONTAINER -p 80:80 $IMAGE:$TAG
+docker run -dit --name $CONTAINER -p 80:80 -v $PWD/src/python:/home/keras/lib -v $PWD/src/php:/var/www/html/ $IMAGE:$TAG
 
 echo ======================
 echo ps

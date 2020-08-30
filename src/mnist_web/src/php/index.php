@@ -12,11 +12,11 @@ function imgBase64()
 function save($imgBase64)
 {
     if ($imgBase64 == '') {
-        return;
+        return null;
     }
 
     if ($imgBase64 == Consts::$EMPTY_BASE64) {
-        return;
+        return null;
     }
 
     $time = time();
@@ -24,10 +24,26 @@ function save($imgBase64)
     $file_name = '/home/keras/images/' . $date . '_' . $time . '.png';
     $decode = base64_decode($imgBase64);
     file_put_contents($file_name, $decode);
+    return $file_name;
+}
+
+function predict($file_name){
+  if($file_name == null){
+    return null;
+
+  }
+    $command="/home/keras/venv/bin/python main.py ";
+    exec($command,$output);
+    var_dump($output);
+    // exit();
+    return $output;
 }
 
 $imgBase64 = imgBase64();
-save($imgBase64);
+$file_name = save($imgBase64);
+
+$output = predict($file_name);
+
 
 ?>
 <!DOCTYPE html>

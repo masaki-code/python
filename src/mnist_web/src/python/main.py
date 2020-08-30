@@ -37,7 +37,7 @@ def predict_classes(im_file, model):
 # 実行
 
 # 訓練済みモデル読み込み
-model_file = 'my_model.h5'
+model_file = '/home/keras/lib/my_model.h5'
 model = load_model(model_file)
 predict_classes('/home/keras/images/image_0.jpg', model)
 predict_classes('/home/keras/images/image_1.jpg', model)
