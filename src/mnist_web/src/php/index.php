@@ -21,7 +21,7 @@ function save($imgBase64)
 
     $time = time();
     $date = date("Ymd", $time);
-    $file_name = 'file/Handwriting_' . $date . '_' . $time . '.png';
+    $file_name = '/home/keras/images/' . $date . '_' . $time . '.png';
     $decode = base64_decode($imgBase64);
     file_put_contents($file_name, $decode);
 }
@@ -36,11 +36,11 @@ save($imgBase64);
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>HTML5のcanvasに手書き文字</title>
 <style type="text/css"></style>
-<link rel="stylesheet" href="Handwriting.css">
-<script type="text/javascript" src="Handwriting.js"></script>
+<link rel="stylesheet" href="common.css">
+<script type="text/javascript" src="common.js"></script>
 </head>
 <body onload="mam_draw_init();">
-    <h3>HTML5のcanvasに手書き文字</h3>
+    <h3>手書き文字の数字予測</h3>
     <div style="border: solid 1px #000000; width: 200px;" id="candiv">
         <canvas id="can" width="200px" height="200px"></canvas>
     </div>
