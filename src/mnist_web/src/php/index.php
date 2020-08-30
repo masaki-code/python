@@ -9,15 +9,15 @@ $output = predict($file_name);
 <html lang="ja">
 <head>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>HTML5のcanvasに手書き文字</title>
+<title>手書き文字の数字予測</title>
 <style type="text/css"></style>
 <link rel="stylesheet" href="common.css">
 <script type="text/javascript" src="common.js"></script>
 </head>
 <body onload="mam_draw_init();">
     <h3>手書き文字の数字予測</h3>
-    <div style="border: solid 1px #000000; width: 200px;" id="candiv">
-        <canvas id="can" width="200px" height="200px"></canvas>
+    <div style="border: solid 1px #000000; width: 150px;" id="candiv">
+        <canvas id="can" width="150px" height="150px"></canvas>
     </div>
     <br>
     <input type="button" onClick="clearCan();" value="クリア" style="width: 100; height: 30;" data-inline="true" />
@@ -26,9 +26,10 @@ $output = predict($file_name);
         <input type="hidden" name="imgBase64" id="imgBase64" value="" data-inline="true" />
     </form>
     <br>
+    <br>
     <?php
     if ($imgBase64 != '') {
-        echo ('<img src="data:image/png;base64,' . $imgBase64 . '" />');
+        echo ('<div style="border: solid 1px #000000;width: 150px;"><img  src="data:image/png;base64,' . $imgBase64 . '" /></div>');
     }
     ?>
     <br>

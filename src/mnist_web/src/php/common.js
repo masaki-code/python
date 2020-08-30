@@ -66,14 +66,14 @@ function onMouseUp(event){
 }
 
 function drawLine(){
-    ct.strokeStyle="#000000";
+  ct.strokeStyle="#000000";
     ct.lineWidth=5;
-    ct.lineJoin="round";
-    ct.lineCap="round";
+    ct.lineJoin="bevel";
+    ct.lineCap="bevel";
 
-    rx=Math.abs(x-ox)+1;
-    ry=Math.abs(y-oy)+1;
-    ww=Math.atan2(ry,rx)*4+0.5;
+    rx=Math.abs(x-ox)+2;
+    ry=Math.abs(y-oy)+2;
+    ww=Math.atan2(ry,rx)*10+1;
     ct.lineWidth=ww;
 
     ct.beginPath();
@@ -93,5 +93,6 @@ function savePic(){
     document.getElementById("imgBase64").value=imgPng;
     document.getElementById("fm").submit();
 }
+
 function scx(){return document.documentElement.scrollLeft || document.body.scrollLeft;}
 function scy(){return document.documentElement.scrollTop  || document.body.scrollTop ;}

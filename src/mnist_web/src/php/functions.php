@@ -1,5 +1,5 @@
 <?php
-require_once 'Consts.php';
+require_once 'consts.php';
 
 function imgBase64()
 {
@@ -11,11 +11,7 @@ function imgBase64()
 
 function save($imgBase64)
 {
-    if ($imgBase64 == '') {
-        return '';
-    }
-
-    if ($imgBase64 == Consts::$EMPTY_BASE64) {
+    if ($imgBase64 == '' || $imgBase64 == EMPTY_BASE64) {
         return '';
     }
 
@@ -32,7 +28,7 @@ function predict($file_name)
     if ($file_name == '') {
         return '';
     }
-    $command = "/home/keras/venv/bin/python /home/keras/lib/main.py 2>&1";
+    $command = "/home/keras/venv/bin/python /home/keras/lib/main.py " . $file_name . " 2>&1";
     exec($command, $output);
     return $output;
 }
