@@ -13,7 +13,10 @@ RUN . /home/keras/venv/bin/activate && \
       /home/keras/venv/bin/pip install --upgrade opencv-python  && \
       /home/keras/venv/bin/pip install --upgrade Pillow
 
-RUN mkdir -p /home/keras/lib && mkdir -p /home/keras/images
+RUN mkdir -p /home/keras/lib && \
+    mkdir -p /home/keras/images &&  \
+   chmod 757 /home/keras/images
+
 COPY ./src/python /home/keras/lib
 COPY ./src/images /home/keras/images
 COPY ./src/php    /var/www/html/
