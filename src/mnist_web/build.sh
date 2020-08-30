@@ -1,14 +1,14 @@
 #!/bin/bash
 
-IMAGE=my-keras-mnist_web_tmp5
-CONTAINER=my-keras-mnist_web-app_tmp5
+IMAGE=my-keras-mnist_web
+TAG=tmp_`date +"%Y%m%d_%H%M%S"`
+CONTAINER=my-keras-mnist_web-app_$TAG
 HOST_DIR=$PWD/files
-GEST_DIR=/home/keras
-
+GEST_DIR=/home/keras/src
 echo ======================
 echo build
 echo ======================
-docker build -t $IMAGE .
+docker build -t $IMAGE:$TAG .
 
 echo ======================
 echo ls
@@ -18,7 +18,7 @@ docker image ls $IMAGE
 echo ======================
 echo run
 echo ======================
-docker run -dit --name $CONTAINER -v $HOST_DIR:$GEST_DIR $IMAGE
+docker run -dit --name $CONTAINER -p 80:80 -v $HOST_DIR:$GEST_DIR $IMAGE:$TAG
 
 echo ======================
 echo ps
@@ -29,3 +29,8 @@ echo ======================
 echo exec
 echo ======================
 docker exec -it $CONTAINER /bin/bash
+
+echo ======================
+echo stop
+echo ======================
+docker stop $CONTAINER 
